@@ -5,7 +5,7 @@ html, body {
     margin: 0;
     padding: 0;
     /* General background light blue */
-    background-color: lightblue;
+    background-color: #c8f3f8;
     font-family: Arial, sans-serif; /* Default font; headings will override */
 }
 
@@ -17,7 +17,7 @@ html, body {
     border-radius: 10px;
     
     /* Background gradient from left (dark cyan) to right (light blue) */
-    background: linear-gradient(to right, darkcyan, lightblue);
+    background: linear-gradient(to right, #0f6076, #2acddf);
     padding: 20px;
     margin: 20px;
 }
@@ -30,6 +30,7 @@ html, body {
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin: 0; /* Optional: remove default margin for tighter layout */
+    font-size: 2em;
 }
 
 /* p in the header: white text */
@@ -46,15 +47,19 @@ html, body {
     background-color: #fff;
     margin: 20px;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* h2: bold, largest text, Times New Roman, dark cyan */
 #main-content h2 {
+    text-transform: uppercase;
     font-weight: bold;
     font-family: "Times New Roman", Times, serif;
     color: darkcyan;
-    font-size: 2em; /* Adjust to your preference */
+    font-size: 1.6em; /* Adjust to your preference */
     margin-top: 0; /* Optional: remove extra spacing */
+    border-bottom: lightblue 2px solid ;
 }
 
 /* Paragraph text: dark blue */
@@ -64,10 +69,11 @@ html, body {
 
 /* h3: bold, slightly smaller than h2, Times New Roman, dark cyan */
 #main-content h3 {
+    text-transform: uppercase;
     font-weight: bold;
     font-family: "Times New Roman", Times, serif;
     color: darkcyan;
-    font-size: 1.5em; /* Slightly smaller than h2 */
+    font-size: 1.1em; /* Slightly smaller than h2 */
     margin-top: 1em;
 }
 
@@ -83,45 +89,62 @@ html, body {
 /* To keep list text dark blue (if desired) */
 #main-content ul li {
     color: darkblue;
+    padding: 5px 0;
+}
+
+#main-content ul li::marker {
+    color: rgb(101, 185, 213);
 }
 
 /* h4: slightly smaller than h3, same font, same color (dark cyan) */
 #main-content h4 {
     font-family: "Times New Roman", Times, serif;
     color: darkcyan;
-    font-size: 1.3em;
-    font-weight: normal;
+    font-size: 1.1em;
+    font-weight: bold;
     margin-top: 1em;
+}
+
+.important {
+    color: darkcyan;
+    font-weight: bold;
+    background-color: rgb(150, 194, 209);
+    border-radius: 5px;
+    padding: 0 5px 0 5px;
 }
 
 /* h5: slightly smaller than h4, same font, same color */
 #main-content h5 {
     font-family: "Times New Roman", Times, serif;
     color: darkcyan;
-    font-size: 1.2em;
-    font-weight: normal;
+    font-size: .8em;
     margin-top: 1em;
+    font-weight: bold;
 }
 
 /* Ordered list numbers: same color as p text (dark blue) */
 #main-content ol {
     color: darkblue;
-    margin-left: 1em;
-    padding-left: 0;
+    margin-left: .8em;
+    padding-left: 20px;
+}
+
+#main-content ol li {
+    padding: 5px 0;
 }
 
 /* h6: slightly smaller than h5, same font, same color */
 #main-content h6 {
     font-family: "Times New Roman", Times, serif;
     color: darkcyan;
-    font-size: 1.1em;
-    font-weight: normal;
+    font-size: .6em;
     margin-top: 1em;
+    font-weight: bold;
 }
 
 /* Link text color: light blue */
 #main-content a {
-    color: lightblue;
+    color: rgb(131, 202, 225);
     text-decoration: none; /* optional if you don't want underlines */
 }
 
@@ -137,6 +160,11 @@ html, body {
        float: right;
        width: 40%;
     */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Quiz-section h2: Times New Roman, bold, dark cyan */
@@ -149,33 +177,45 @@ html, body {
 
 /* Image: fixed location, purple borders */
 #quiz-section img {
-    position: fixed; 
     border: 2px solid purple;
     /* Adjust as needed for layout:
        top: 100px;
        left: 100px;
     */
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
 }
 
 /* Form: right-justify, dark blue text */
 #quiz-section form {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     color: darkblue; /* This affects the form text */
+    font-weight: bold;
+    font-size: .8em;
+    margin-left: 20px;
 }
 
 /* Input text boxes: border color cyan */
 #quiz-section input[type="text"] {
-    border: 1px solid cyan;
-    margin: 5px 0;
+    border: 1px solid rgb(4, 107, 133);
+    margin: 10px 0;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
 }
 
 /* Submit button: background cyan, text white */
 #quiz-section input[type="submit"] {
-    background-color: cyan;
+    background-color: rgb(4, 107, 133);
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
     cursor: pointer;
+    border-radius:5px;
+    margin-top: 10px;
 }
 
 /* ----------------------------------- */
@@ -193,7 +233,7 @@ html, body {
     font-family: "Times New Roman", Times, serif;
     color: darkcyan;
     font-weight: bold;
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin-top: 0;
 }
 
@@ -216,16 +256,19 @@ html, body {
     background-color: grey;
     color: white;
     font-weight: bold;
+    text-align: left;
 }
 
 /* Row 2: no color (transparent) */
 #species-table tr:nth-child(2) {
     background-color: transparent;
+    color: rgb(22, 22, 179);
 }
 
 /* Row 3: background white */
 #species-table tr:nth-child(3) {
     background-color: #fff;
+    color: rgb(22, 22, 179);
 }
 
 /* ------------------------ */
@@ -233,9 +276,11 @@ html, body {
 /* ------------------------ */
 #footer {
     /* Background dark cyan, text white */
-    background-color: darkcyan;
+    background-color: rgb(4, 107, 133);
     color: white;
     padding: 20px;
-    margin: 20px 0 0 0; /* Optional: separate footer from main content */
+    margin: 20px; /* Optional: separate footer from main content */
     text-align: center; /* Optional: center the footer text */
+    border-radius: 10px;
+    font-size: 0.9em; /* Optional: smaller text */
 }
