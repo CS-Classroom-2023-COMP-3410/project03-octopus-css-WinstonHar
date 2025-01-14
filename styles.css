@@ -1,0 +1,241 @@
+/* ------------------------ */
+/* 1) Global styling        */
+/* ------------------------ */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* General background light blue */
+    background-color: lightblue;
+    font-family: Arial, sans-serif; /* Default font; headings will override */
+}
+
+/* ------------------------ */
+/* 2) Header (#header)      */
+/* ------------------------ */
+#header {
+    /* Rounded box */
+    border-radius: 10px;
+    
+    /* Background gradient from left (dark cyan) to right (light blue) */
+    background: linear-gradient(to right, darkcyan, lightblue);
+    padding: 20px;
+    margin: 20px;
+}
+
+/* h1: white, bold, Times New Roman, centered, drop shadow */
+#header h1 {
+    color: #fff;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 0; /* Optional: remove default margin for tighter layout */
+}
+
+/* p in the header: white text */
+#header p {
+    color: #fff;
+    margin: 5px 0;
+}
+
+/* ------------------------------- */
+/* 3) Main Content (#main-content) */
+/* ------------------------------- */
+#main-content {
+    /* White background */
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* h2: bold, largest text, Times New Roman, dark cyan */
+#main-content h2 {
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    color: darkcyan;
+    font-size: 2em; /* Adjust to your preference */
+    margin-top: 0; /* Optional: remove extra spacing */
+}
+
+/* Paragraph text: dark blue */
+#main-content p {
+    color: darkblue;
+}
+
+/* h3: bold, slightly smaller than h2, Times New Roman, dark cyan */
+#main-content h3 {
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    color: darkcyan;
+    font-size: 1.5em; /* Slightly smaller than h2 */
+    margin-top: 1em;
+}
+
+/* Unordered list: dot color light blue */
+#main-content ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    color: lightblue; /* This will color the bullets */
+    margin-left: 1em;
+    padding-left: 0;
+}
+
+/* To keep list text dark blue (if desired) */
+#main-content ul li {
+    color: darkblue;
+}
+
+/* h4: slightly smaller than h3, same font, same color (dark cyan) */
+#main-content h4 {
+    font-family: "Times New Roman", Times, serif;
+    color: darkcyan;
+    font-size: 1.3em;
+    font-weight: normal;
+    margin-top: 1em;
+}
+
+/* h5: slightly smaller than h4, same font, same color */
+#main-content h5 {
+    font-family: "Times New Roman", Times, serif;
+    color: darkcyan;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-top: 1em;
+}
+
+/* Ordered list numbers: same color as p text (dark blue) */
+#main-content ol {
+    color: darkblue;
+    margin-left: 1em;
+    padding-left: 0;
+}
+
+/* h6: slightly smaller than h5, same font, same color */
+#main-content h6 {
+    font-family: "Times New Roman", Times, serif;
+    color: darkcyan;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-top: 1em;
+}
+
+/* Link text color: light blue */
+#main-content a {
+    color: lightblue;
+    text-decoration: none; /* optional if you don't want underlines */
+}
+
+/* ------------------------------------------------------- */
+/* 4) Quiz Section (#quiz-section, nested in main-content) */
+/* ------------------------------------------------------- */
+#quiz-section {
+    /* Background light blue in a "floating box" */
+    background-color: lightblue;
+    margin: 20px 0;
+    padding: 20px;
+    /* You can float or use any positioning as needed:
+       float: right;
+       width: 40%;
+    */
+}
+
+/* Quiz-section h2: Times New Roman, bold, dark cyan */
+#quiz-section h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: darkcyan;
+    margin-top: 0;
+}
+
+/* Image: fixed location, purple borders */
+#quiz-section img {
+    position: fixed; 
+    border: 2px solid purple;
+    /* Adjust as needed for layout:
+       top: 100px;
+       left: 100px;
+    */
+}
+
+/* Form: right-justify, dark blue text */
+#quiz-section form {
+    text-align: right;
+    color: darkblue; /* This affects the form text */
+}
+
+/* Input text boxes: border color cyan */
+#quiz-section input[type="text"] {
+    border: 1px solid cyan;
+    margin: 5px 0;
+}
+
+/* Submit button: background cyan, text white */
+#quiz-section input[type="submit"] {
+    background-color: cyan;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* ----------------------------------- */
+/* 5) Species Table (#species-table)   */
+/* ----------------------------------- */
+#species-table {
+    /* No background box */
+    background-color: transparent;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* h2: large text, dark cyan, bold, Times New Roman */
+#species-table h2 {
+    font-family: "Times New Roman", Times, serif;
+    color: darkcyan;
+    font-weight: bold;
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+/* Table with black border lines */
+#species-table table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures no double borders */
+}
+
+/* Table, th, td all share black border */
+#species-table table,
+#species-table th,
+#species-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+/* Row 1 (header row): grey background, bolded, white text */
+#species-table tr:first-child {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+}
+
+/* Row 2: no color (transparent) */
+#species-table tr:nth-child(2) {
+    background-color: transparent;
+}
+
+/* Row 3: background white */
+#species-table tr:nth-child(3) {
+    background-color: #fff;
+}
+
+/* ------------------------ */
+/* 6) Footer (#footer)      */
+/* ------------------------ */
+#footer {
+    /* Background dark cyan, text white */
+    background-color: darkcyan;
+    color: white;
+    padding: 20px;
+    margin: 20px 0 0 0; /* Optional: separate footer from main content */
+    text-align: center; /* Optional: center the footer text */
+}
