@@ -56,10 +56,24 @@ html, body {
     text-transform: uppercase;
     font-weight: bold;
     font-family: "Times New Roman", Times, serif;
-    color: darkcyan;
+    color: rgb(14, 95, 132);
     font-size: 1.6em; /* Adjust to your preference */
     margin-top: 0; /* Optional: remove extra spacing */
-    border-bottom: lightblue 2px solid ;
+}
+
+#main-content h2::after {
+    content: "";
+    display: block;
+    
+    /* 10% width dash */
+    width: 5%;
+    height: 2px;
+
+    /* Dash color—use same color as your original border or any color you like */
+    background-color: lightblue;
+
+    /* Center the dash horizontally */
+    margin: 6px 0 0 0;
 }
 
 /* Paragraph text: dark blue */
@@ -154,21 +168,27 @@ html, body {
 #quiz-section {
     /* Background light blue in a "floating box" */
     background-color: lightblue;
-    margin: 20px 0;
-    padding: 20px;
-    /* You can float or use any positioning as needed:
-       float: right;
-       width: 40%;
-    */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+
+    /* --- Turn this container into a 2-column grid --- */
+    display: grid;
+    /* 1st column = left side (title + image),
+       2nd column = right side (form). */
+    grid-template-columns: 250px 1fr;
+    /* 2 rows for the left column: row 1 for h2, row 2 for the image. */
+    grid-template-rows: auto auto;
+    /* Space between rows/columns if desired */
+    grid-gap: 1em;
 }
 
 /* Quiz-section h2: Times New Roman, bold, dark cyan */
 #quiz-section h2 {
+    grid-row: 1;
+    grid-column: 1;
+
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
     color: darkcyan;
@@ -177,34 +197,40 @@ html, body {
 
 /* Image: fixed location, purple borders */
 #quiz-section img {
+    grid-row: 2;
+    grid-column: 1;
+
     border: 2px solid purple;
-    /* Adjust as needed for layout:
-       top: 100px;
-       left: 100px;
-    */
     width: 100px;
     height: auto;
-    margin-right: 20px;
 }
 
 /* Form: right-justify, dark blue text */
 #quiz-section form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    grid-row: 1/ 3;
+    grid-column: 2;
+    
+    width: 300px;
     color: darkblue; /* This affects the form text */
     font-weight: bold;
     font-size: .8em;
-    margin-left: 20px;
+
+    justify-self: right;
+    display: flex;
+    flex-direction: column;
+}
+
+#quiz-section form label {
+    margin: 10px 0 5px 0;
 }
 
 /* Input text boxes: border color cyan */
 #quiz-section input[type="text"] {
     border: 1px solid rgb(4, 107, 133);
-    margin: 10px 0;
     border-radius: 5px;
     padding: 5px;
-    width: 200px;
+    width: 250px;
+    margin-top: 5px;
 }
 
 /* Submit button: background cyan, text white */
@@ -216,6 +242,7 @@ html, body {
     cursor: pointer;
     border-radius:5px;
     margin-top: 10px;
+    width: 40%;
 }
 
 /* ----------------------------------- */
@@ -224,7 +251,6 @@ html, body {
 #species-table {
     /* No background box */
     background-color: transparent;
-    margin: 20px;
     padding: 20px;
 }
 
@@ -235,6 +261,21 @@ html, body {
     font-weight: bold;
     font-size: 1.5em;
     margin-top: 0;
+}
+
+#species-table h2::after {
+    content: "";
+    display: block;
+    
+    /* 10% width dash */
+    width: 5%;
+    height: 2px;
+
+    /* Dash color—use same color as your original border or any color you like */
+    background-color: lightblue;
+
+    /* Center the dash horizontally */
+    margin: 6px 0 0 0;
 }
 
 /* Table with black border lines */
